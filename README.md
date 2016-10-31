@@ -12,14 +12,11 @@ $ sudo luarocks install gonapps-cookie
 ```lua
 local cookieModule = require "gonapps.cookie"
 local cookie = cookieModule.new("aaa=bbb; ccc=ddd; HttpOnly")
-
 if cookie.flags["HttpOnly"] then
     print("HTTP Only Flag")
 end
-
-print(cookie.data["ccc"])
-
-print(cookie.toString())
+print("ccc", cookie.data["ccc"])
+print(cookie:toString())
 ```
 ## License
 LGPLv3
