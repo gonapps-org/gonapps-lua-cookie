@@ -1,4 +1,4 @@
-gonapps-cookie-decoder
+gonapps-cookie
 =
 
 ## About
@@ -11,8 +11,14 @@ $ sudo luarocks install gonapps-cookie
 **example code**
 ```lua
 local cookieModule = require "gonapps.cookie"
-local cookie = cookieModule.new("aaaaaaaaaaaa=bbbbbbbbbbbb; HttpOnly")
+local cookie = cookieModule.new("aaa=bbb; ccc=ddd; HttpOnly")
+
 if cookie.flags["HttpOnly"] then
+    print("HTTP Only Flag")
+end
+
+print(cookie.data["ccc"])
+
 print(cookie.toString())
 ```
 ## License
