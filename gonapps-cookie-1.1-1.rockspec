@@ -1,9 +1,9 @@
 package = "gonapps-cookie"
-version = "1.0-1"
+version = "1.1-1"
 
 source = {
     url = "git://github.com/gonapps/gonapps-lua-cookie",
-    tag = "v1.0-1"
+    tag = "v1.1-1"
 }
 
 description = {
