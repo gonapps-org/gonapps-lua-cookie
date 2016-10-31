@@ -6,12 +6,14 @@ function _M.new(cookieString)
     local self = setmetatable({}, _M)
     self.data = {}
     self.flags = {}
-    for keyValue in string.gmatch(cookieString, "([^;]+)") do
-        key, value = string.match(keyValue, " *([^=]+)=(.+)")
-        if key == nil or value == nil then
-            self.flags[string.match(keyValue, " *([^=]+)")] = true
-        else
-            self.data[key] = value
+    if cookieString ~= nil then
+        for keyValue in string.gmatch(cookieString, "([^;]+)") do
+            key, value = string.match(keyValue, " *([^=]+)=(.+)")
+            if key == nil or value == nil then
+                self.flags[string.match(keyValue, " *([^=]+)")] = true
+            else
+                self.data[key] = value
+            end
         end
     end
     return self 
