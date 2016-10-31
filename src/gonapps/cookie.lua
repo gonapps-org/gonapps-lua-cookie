@@ -19,26 +19,26 @@ end
 
 function _M:toString()
     local first = true 
-    local tmp = {}
+    local buffer = {}
     for key, value in pairs(self.data) do
         if first then
             first = false
         else
-            table.insert(tmp, "; ")
+            table.insert(buffer, "; ")
         end
-        table.insert(tmp, key .. "=" .. value)
+        table.insert(buffer, key .. "=" .. value)
     end
     for key, value in pairs(self.flags) do
         if value == true then
             if first then
                 first = false
             else
-                table.insert(tmp, "; ")
+                table.insert(buffer, "; ")
             end
-            table.insert(tmp, key)
+            table.insert(buffer, key)
         end
     end
-    return table.concat(tmp)
+    return table.concat(buffer)
 end
 
 return _M
