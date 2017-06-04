@@ -19,4 +19,4 @@ print("ccc", cookie.data["ccc"])
 print(cookie:toString())
 ```
 ## License
-LGPLv3
+Mozilla Public License 2.0
